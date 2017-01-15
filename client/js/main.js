@@ -53,4 +53,4 @@ $(function() {
 /**
  * On établit la connexion avec le serveur.
  */
-var socket = io('http://localhost');
+var socket = io('http://localhost:8080');
