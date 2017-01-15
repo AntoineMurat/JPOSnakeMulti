@@ -2,6 +2,8 @@ Number.prototype.mod = function(n) {
 	return ((this % n) + n) % n;
 };
 
+hljs.initHighlightingOnLoad()
+
 /**
  * Lorsque la DOM sera chargée :
  */
