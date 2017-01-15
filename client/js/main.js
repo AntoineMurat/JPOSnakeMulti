@@ -1,22 +1,18 @@
 Number.prototype.mod = function(n) {
-    return ((this % n) + n) % n;
+	return ((this % n) + n) % n;
 };
 
 var socket = io('http://localhost');
 
-var exposed = {};
+$(function() {
 
-socket.on('connect', function () {
+	ConsoleLogHTML.connect($("#console"));
 
-	$(function() {
+	socket.on('connect', function () {
 
-	    var game = new Game(
-	    	ctx = $("canvas")[0].getContext("2d")
-	    )
-
-	    game.start()
-
-	    window.exposed.game = game
+		new Game(
+			$("canvas")[0].getContext("2d")
+		).start()
 
 	})
 

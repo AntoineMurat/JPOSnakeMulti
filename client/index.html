@@ -2,12 +2,17 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Snake multijoueur - JPO</title>
 	
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 		<link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<script src="js/socket.io.js"></script>
 		<script src="js/jquery.js"></script>
+		<script src="js/materialize.min.js"></script>
+		<script src="js/console-log-html.min.js"></script>
 
 		<script src="js/enums/Directions.js"></script>
 
@@ -22,9 +27,68 @@
 
 	</head>
 	<body>
-		<h1>Snake multijoueur - JPO</h1>
 
-		<canvas width="800" height="800"></canvas>
-	
+		<nav class="nav-extended">
+			<div class="nav-wrapper container">
+				<a href="#" class="brand-logo">JPO : Snake Multijoueur</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="https://www.iut.unilim.fr/" target="_blank">IUT du Limousin</a></li>
+					<li><a href="https://github.com/Evoliofly" target="_blank">Antoine Murat</a></li>
+					<li><a href="https://github.com/ZekLouis" target="_blank">Louis Gaume</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="https://www.iut.unilim.fr/">IUT du Limousin</a></li>
+					<li><a href="https://github.com/Evoliofly">Antoine Murat</a></li>
+					<li><a href="https://github.com/ZekLouis">Louis Gaume</a></li>
+				</ul>
+
+				<ul class="tabs tabs-transparent">
+					<li class="tab"><a class="active" href="#part1">Avant propos</a></li>
+					<li class="tab"><a href="#part2">Mise en place solitaire</a></li>
+					<li class="tab"><a href="#part3">Ajout du multijoueur</a></li>
+					<li class="tab"><a href="#part4">Pour aller plus loin</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s12 m6 l4 center">
+				<canvas width="800" height="800"></canvas>
+				<div class="card blue-grey darken-1 left-align">
+					<div class="card-content white-text">
+						<span class="card-title">Console</span>
+						<ul id="console"></ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="part1" class="col s12 m6 l8">
+				
+				<h3>Avant propos</h3>
+
+				Dans ce tutoriel...
+
+			</div>
+
+			<div id="part2" class="col s12 m6 l8">
+				<h3>Mise en place solitaire</h3>
+
+				Quand il faut y aller, il faut y aller !
+			</div>
+			<div id="part3" class="col s12 m6 l8">
+				<h3>Ajout du multijoueur</h3>
+
+				On se fait un peu chier tout seul, non ?
+			</div>
+			<div id="part4" class="col s12 m6 l8">
+				<h3>Pour aller plus loin</h3>
+
+				Vous en voulez plus ?
+				Le projet est disponible à l'adresse suivante...
+
+
+			</div>
+		</div>
 	</body>
 </html>
