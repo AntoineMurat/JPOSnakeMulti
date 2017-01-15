@@ -5,6 +5,7 @@ Number.prototype.mod = function(n) {
 /**
  * Lorsque la DOM sera chargée :
  */
+
 $(function() {
 
 	/**
