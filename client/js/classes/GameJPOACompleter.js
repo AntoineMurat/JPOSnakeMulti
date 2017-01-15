@@ -292,6 +292,7 @@ class GameJPOACompleter {
 		var that = this
 
 		$(document).on("keydown", function(event) {
+			event.preventDefault()
 			if ([Directions.UP,
 				Directions.DOWN,
 				Directions.LEFT,

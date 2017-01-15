@@ -38,6 +38,7 @@ class Game {
 		 * Attention, un serpent ne peut pas faire demi-tour !
 		 */
 		$(document).on("keydown", function(event) {
+			event.preventDefault()
 			if ([Directions.UP,
 				Directions.DOWN,
 				Directions.LEFT,
