@@ -43,6 +43,11 @@ canvas {
   color: white;
 }
 
-.btnContinue:hover{
+.btnContinue:hover, .btnContinue:active{
   background-color: #ee6e73;
+}
+
+.contenuTuto{
+  max-height: 72%; 
+  overflow-y: scroll;
 }

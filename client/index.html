@@ -72,7 +72,7 @@
 
 			<!-- Première partie du tutoriel -->
 			<div id="part1" class="col s12 m6 l8">
-				<div class="row" style="max-height: 72%; overflow-y: scroll;">
+				<div class="row contenuTuto">
 					<h4>Avant propos</h4>
 
 					Dans cet atelier, tu vas être amené à réaliser un petit jeu. Comme tu l'as surement déjà vu, ce jeu reprendra le principe du jeu snake en ajoutant quelques fonctionnalités.
@@ -139,7 +139,7 @@ class nomClass{
 
 			<!-- Partie 2 du tutoriel -->
 			<div id="part2" class="col s12 m6 l8">
-				<div class="row" style="max-height: 72%; overflow-y: scroll;">
+				<div class="row contenuTuto">
 					<h3>Mise en place solitaire</h3>
 
 					Quand il faut y aller, il faut y aller !
@@ -167,7 +167,7 @@ class nomClass{
 
 			<!-- Partie 3 du tutoriel -->
 			<div id="part3" class="col s12 m6 l8">
-				<div class="row" style="max-height: 72%; overflow-y: scroll;">
+				<div class="row contenuTuto">
 					<h3>Ajout du multijoueur</h3>
 
 					On se fait un peu chier tout seul, non ?
@@ -195,7 +195,7 @@ class nomClass{
 
 			<!-- Partie 4 du tutoriel -->
 			<div id="part4" class="col s12 m6 l8">
-				<div class="row" style="max-height: 72%; overflow-y: scroll;">
+				<div class="row contenuTuto">
 					<h3>Pour aller plus loin</h3>
 
 					Vous en voulez plus ?
@@ -217,40 +217,5 @@ class nomClass{
 				</div>
 			</div>
 		</div>
-		<script>
-			/**
-			 * Bouton de la page 1
-			 */
-			$("#btnContinue1").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part2');
-			});
-
-			/**
-			 * Boutons de la page 2
-			 */
-			$("#btnContinue2-3").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part3');
-			});
-			$("#btnContinue2-1").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part1');
-			});
-
-			/**
-			 * Boutons de la page 3
-			 */
-			$("#btnContinue3-4").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part4');
-			});
-			$("#btnContinue3-2").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part2');
-			});
-
-			/**
-			 * Bouton de la page 4
-			 */
-			$("#btnContinue4-3").click(function() {
-				$('ul.tabs').tabs('select_tab', 'part3');
-			});
-		</script>
 	</body>
 </html>

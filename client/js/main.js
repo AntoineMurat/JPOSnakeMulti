@@ -5,6 +5,40 @@ Number.prototype.mod = function(n) {
 hljs.initHighlightingOnLoad()
 
 /**
+ * Bouton de la page 1
+ */
+$("#btnContinue1").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part2');
+});
+
+/**
+ * Boutons de la page 2
+ */
+$("#btnContinue2-3").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part3');
+});
+$("#btnContinue2-1").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part1');
+});
+
+/**
+ * Boutons de la page 3
+ */
+$("#btnContinue3-4").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part4');
+});
+$("#btnContinue3-2").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part2');
+});
+
+/**
+ * Bouton de la page 4
+ */
+$("#btnContinue4-3").click(function() {
+	$('ul.tabs').tabs('select_tab', 'part3');
+});
+
+/**
  * Lorsque la DOM sera chargée :
  */
 
