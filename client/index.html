@@ -13,6 +13,9 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/materialize.min.js"></script>
 		<script src="js/console-log-html.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="js/styles/androidstudio.css">
+		<script src="js/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 
 		<script src="js/enums/Directions.js"></script>
 
@@ -45,8 +48,8 @@
 				</ul>
 
 				<ul class="tabs tabs-transparent">
-					<li class="tab"><a class="active" href="#part1">Avant propos</a></li>
-					<li class="tab"><a href="#part2">Mise en place solitaire</a></li>
+					<li class="tab"><a id="tab_part1" class="active" href="#part1">Avant propos</a></li>
+					<li class="tab"><a id="tab_part2" href="#part2">Mise en place solitaire</a></li>
 					<li class="tab"><a href="#part3">Ajout du multijoueur</a></li>
 					<li class="tab"><a href="#part4">Pour aller plus loin</a></li>
 				</ul>
@@ -64,30 +67,140 @@
 			</div>
 
 			<div id="part1" class="col s12 m6 l8">
-				
-				<h3>Avant propos</h3>
+				<div class="row" style="max-height: 72%; overflow-y: scroll;">
+					<h4>Avant propos</h4>
 
-				Dans ce tutoriel...
+					Dans cet atelier, tu vas être amené à réaliser un petit jeu. Comme tu l'as surement déjà vu, ce jeu reprendra le principe du jeu snake en ajoutant quelques fonctionnalités.
+					
+					<h4>Olala mais qu'est-ce que c'est que tous ces trucs ?</h4>
 
+					Parlons d'abord de ton environnement de travail. En bas à gauche tu peux voir la console, c'est elle qui te permettra de visualiser un direct les informations fournies par le jeu ou par le serveur.
+					En haut à gauche tu peux voir la fenêtre de jeu, c'est ici qu'il y aura le plus d'action, c'est dans cette zone que tu verras ton serpent et celui des autres (ainsi que les pommes qu'il faut manger).
+
+					<h4>Le code (ton travail)</h4>
+
+					Le code est partiellement réalisé, évidemment tu ne vas pas réaliser le jeu en partant de 0.
+					Le jeu a été réalisé par notre cher major de promotion entre 2 cours dans un couloir.
+
+					<pre><code class="hljs javascript">
+/**
+* Une classe (ou class in english) permet de représenter un objet.
+*/
+class nomClass{
+
+	/**
+	* Une methode est une fonction que l'objet est capable de réaliser
+	*/
+	methode() {
+
+	}
+
+	// Exemple :
+	direBonjour(){
+		dire("bonjour");
+	}
+}	
+					</code></pre>
+
+					<h4>Principe du jeu</h4>
+
+					Le but est d'obtenir le meilleur score pour ce faire, il faut manger les pommes avec son serpent. 
+					Il faut aussi faire attention a ne pas se faire "manger" par les autres joueurs en effet il est possible de les manger.
+
+					<h4>Comment jouer ?</h4>
+
+					Il suffit de déplacer son personnage en utilisant les flèches directionnelles.
+					La partie de se termine lorsque le joueur se mange lui même et ou se fait manger.
+				</div>
+				<div class="row">
+					<div class="divider"></div>
+				</div>
+				<div class="row">
+					<button id="btnContinue1" class="btn waves-effect waves-light col s12 offset-m6 offset-l6 m4 l4">Installation solo !
+						<i class="material-icons right">skip_next</i>
+					</button>
+				</div>
+				<script>
+					$("#btnContinue1").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part2');
+					});
+				</script>
 			</div>
 
 			<div id="part2" class="col s12 m6 l8">
-				<h3>Mise en place solitaire</h3>
+				<div class="row">
+					<h3>Mise en place solitaire</h3>
 
-				Quand il faut y aller, il faut y aller !
+					Quand il faut y aller, il faut y aller !
+				</div>
+				<div class="row">
+					<div class="divider"></div>
+				</div>
+				<div class="row">
+					<button id="btnContinue2-1" class="btn waves-effect waves-light col s12 offset-m1 offset-l1 m4 l4">Avant propos
+						<i class="material-icons left">skip_previous</i>
+					</button>
+					<button id="btnContinue2-3" class="btn waves-effect waves-light col s12 offset-m1 offset-l1 m4 l4">Le multi-joueur
+						<i class="material-icons right">skip_next</i>
+					</button>
+				</div>
+				<script>
+					$("#btnContinue2-3").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part3');
+					});
+					$("#btnContinue2-1").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part1');
+					});
+				</script>
 			</div>
+
 			<div id="part3" class="col s12 m6 l8">
-				<h3>Ajout du multijoueur</h3>
+				<div class="row">
+					<h3>Ajout du multijoueur</h3>
 
-				On se fait un peu chier tout seul, non ?
+					On se fait un peu chier tout seul, non ?
+				</div>
+				<div class="row">
+					<div class="divider"></div>
+				</div>
+				<div class="row">
+					<button id="btnContinue3-2" class="btn waves-effect waves-light col s12 offset-m1 offset-l1 m4 l4">Installation solo !
+						<i class="material-icons left">skip_previous</i>
+					</button>
+					<button id="btnContinue3-4" class="btn waves-effect waves-light col s12 offset-m1 offset-l1 m4 l4">Infos supplémentaires ...
+						<i class="material-icons right">skip_next</i>
+					</button>
+				</div>
+				<script>
+					$("#btnContinue3-4").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part4');
+					});
+					$("#btnContinue3-2").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part2');
+					});
+				</script>
 			</div>
+
 			<div id="part4" class="col s12 m6 l8">
-				<h3>Pour aller plus loin</h3>
+				<div class="row">
+					<h3>Pour aller plus loin</h3>
 
-				Vous en voulez plus ?
-				Le projet est disponible à l'adresse suivante...
-
-
+					Vous en voulez plus ?
+					Le projet est disponible à l'adresse suivante...
+				</div>
+				<div class="row">
+					<div class="divider"></div>
+				</div>
+				<div class="row">
+					<button id="btnContinue4-3" class="btn waves-effect waves-light col s12 offset-m1 offset-l1 m4 l4">Le multi-joueur
+						<i class="material-icons left">skip_previous</i>
+					</button>
+				</div>
+				<script>
+				$("#btnContinue4-3").click(function() {
+						$('ul.tabs').tabs('select_tab', 'part3');
+					});
+				</script>
 			</div>
 		</div>
 	</body>
