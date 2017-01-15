@@ -14,8 +14,6 @@ class Game {
 		this.snakes = [];
 		// La pomme est initialement nule, elle sera envoyée par le serveur.
 		this.apple = null;
-		// On initialise le serpent.
-		this.initSnake()
 		// fix pour les 180.
 		this.directionArrow = null
 
@@ -29,6 +27,9 @@ class Game {
 	start() {
 		console.info("Partie démarrée.")
 		var that = this;
+
+		// On initialise le serpent.
+		this.initSnake()
 
 		/**
 		 * Quand on presse une touche,

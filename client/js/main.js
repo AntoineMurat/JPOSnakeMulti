@@ -2,6 +2,8 @@ Number.prototype.mod = function(n) {
 	return ((this % n) + n) % n;
 };
 
+hljs.initHighlightingOnLoad()
+
 /**
  * Lorsque la DOM sera chargée :
  */
@@ -26,25 +28,20 @@ $(function() {
 	 *
 	 * C'est pourquoi on attend d'être connecté.
 	 */
-	socket.on('connect', function () {
-
+	console.info("En attente de connexion au serveur...")
+	socket.once('connect', function () {
+		console.info("Connexion établie.")
 		/**
-		 * On instane une nouvelle partie.
+		 * On instancie une nouvelle partie.
 		 */
-		var game = new Game(
+		var game = new GameJPOACompleter(
 			$("canvas")[0].getContext("2d")
 		)
 
 		/**
-		 * On la démarre.
+		 * On démarre la partie.
 		 */
 		game.start()
-
-		/**
-		 * Alias.
-		 *
-		 * On définit un ensemble d'alias pour aider le dev' débutant.
-		 */
 
 	})
 
