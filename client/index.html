@@ -68,6 +68,8 @@
 				</div>
 			</div>
 
+
+
 			<!-- Première partie du tutoriel -->
 			<div id="part1" class="col s12 m6 l8">
 				<div class="row" style="max-height: 72%; overflow-y: scroll;">
@@ -85,6 +87,7 @@
 					Le code est partiellement réalisé, évidemment tu ne vas pas réaliser le jeu en partant de 0.
 					Le jeu a été réalisé par notre cher major de promotion entre 2 cours dans un couloir.
 
+
 					<!-- Démonstration du code -->
 					<pre><code class="hljs javascript">
 /**
@@ -99,7 +102,7 @@ class nomClass{
 
 	}
 
-	// Exemple :
+	// Exemple de méthode:
 	direBonjour(){
 		dire("bonjour");
 	}
@@ -117,10 +120,12 @@ class nomClass{
 					La partie de se termine lorsque le joueur se mange lui même et ou se fait manger.
 				</div>
 
+
 				<!-- Séparation -->
 				<div class="row">
 					<div class="divider"></div>
 				</div>
+
 
 				<!-- Bouton pour changer de pages -->
 				<div class="row">
@@ -130,6 +135,8 @@ class nomClass{
 				</div>
 			</div>
 
+
+
 			<!-- Partie 2 du tutoriel -->
 			<div id="part2" class="col s12 m6 l8">
 				<div class="row" style="max-height: 72%; overflow-y: scroll;">
@@ -138,10 +145,12 @@ class nomClass{
 					Quand il faut y aller, il faut y aller !
 				</div>
 
+
 				<!-- Séparation -->
 				<div class="row">
 					<div class="divider"></div>
 				</div>
+
 
 				<!-- Boutons pour changer de pages -->
 				<div class="row">
@@ -154,6 +163,8 @@ class nomClass{
 				</div>
 			</div>
 
+
+
 			<!-- Partie 3 du tutoriel -->
 			<div id="part3" class="col s12 m6 l8">
 				<div class="row" style="max-height: 72%; overflow-y: scroll;">
@@ -162,10 +173,12 @@ class nomClass{
 					On se fait un peu chier tout seul, non ?
 				</div>
 
+
 				<!-- Séparation -->
 				<div class="row">
 					<div class="divider"></div>
 				</div>
+
 
 				<!-- Boutons pour changer de pages -->
 				<div class="row">
@@ -178,6 +191,8 @@ class nomClass{
 				</div>
 			</div>
 
+
+
 			<!-- Partie 4 du tutoriel -->
 			<div id="part4" class="col s12 m6 l8">
 				<div class="row" style="max-height: 72%; overflow-y: scroll;">
@@ -187,10 +202,12 @@ class nomClass{
 					Le projet est disponible à l'adresse suivante...
 				</div>
 
+
 				<!-- Séparation -->
 				<div class="row">
 					<div class="divider"></div>
 				</div>
+
 
 				<!-- Bouton pour changer de pages -->
 				<div class="row">
@@ -198,42 +215,42 @@ class nomClass{
 						<i class="material-icons left">skip_previous</i>
 					</button>
 				</div>
-				<script>
-					/**
-					 * Bouton de la page 1
-					 */
-					$("#btnContinue1").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part2');
-					});
-
-					/**
-					 * Boutons de la page 2
-					 */
-					$("#btnContinue2-3").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part3');
-					});
-					$("#btnContinue2-1").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part1');
-					});
-
-					/**
-					 * Boutons de la page 3
-					 */
-					$("#btnContinue3-4").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part4');
-					});
-					$("#btnContinue3-2").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part2');
-					});
-
-					/**
-					 * Bouton de la page 4
-					 */
-					$("#btnContinue4-3").click(function() {
-						$('ul.tabs').tabs('select_tab', 'part3');
-					});
-				</script>
 			</div>
 		</div>
+		<script>
+			/**
+			 * Bouton de la page 1
+			 */
+			$("#btnContinue1").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part2');
+			});
+
+			/**
+			 * Boutons de la page 2
+			 */
+			$("#btnContinue2-3").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part3');
+			});
+			$("#btnContinue2-1").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part1');
+			});
+
+			/**
+			 * Boutons de la page 3
+			 */
+			$("#btnContinue3-4").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part4');
+			});
+			$("#btnContinue3-2").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part2');
+			});
+
+			/**
+			 * Bouton de la page 4
+			 */
+			$("#btnContinue4-3").click(function() {
+				$('ul.tabs').tabs('select_tab', 'part3');
+			});
+		</script>
 	</body>
 </html>
