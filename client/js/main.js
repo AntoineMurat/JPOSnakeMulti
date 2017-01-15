@@ -2,7 +2,7 @@ Number.prototype.mod = function(n) {
 	return ((this % n) + n) % n;
 };
 
-var socket = io('http://localhost');
+var socket = io('http://localhost:8080');
 
 $(function() {
 
