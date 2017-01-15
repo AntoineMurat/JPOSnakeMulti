@@ -292,11 +292,11 @@ class GameJPOACompleter {
 		var that = this
 
 		$(document).on("keydown", function(event) {
-			event.preventDefault()
 			if ([Directions.UP,
 				Directions.DOWN,
 				Directions.LEFT,
 				Directions.RIGHT].indexOf(event.keyCode) != -1) {
+				event.preventDefault()
 				if (Math.abs(that.mySnake.getDirection() - event.keyCode) != 2) {
 					that.directionArrow = event.keyCode
 				} else {
