@@ -37,3 +37,12 @@ canvas {
 {
   background: rgba(0, 0, 0, 0.2);
 }
+
+.btnContinue{
+  background-color: #ee6e73;
+  color: white;
+}
+
+.btnContinue:hover{
+  background-color: #ee6e73;
+}
