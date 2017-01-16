@@ -10,24 +10,11 @@
 		<link type="text/css" rel="stylesheet" href="css/hljs/androidstudio.css">
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-		<script src="js/socket.io.js"></script>
 		<script src="js/jquery.js"></script>
 		<script src="js/materialize.min.js"></script>
-		<script src="js/console-log-html.min.js"></script>
 		<script src="js/highlight.pack.js"></script>
 
-		<script src="js/enums/Directions.js"></script>
-
-		<script src="js/classes/Coordinates.js"></script>
-		<script src="js/classes/Drawable.js"></script>
-		<script src="js/classes/Apple.js"></script>
-		<script src="js/classes/BodyPart.js"></script>
-		<script src="js/classes/Snake.js"></script>
-		<script src="js/classes/Game.js"></script>
-		<script src="js/classes/GameJPOACompleter.js"></script>
-
 		<script src="js/main.js"></script>
-
 	</head>
 	<body>
 
@@ -58,17 +45,9 @@
 			</div>
 		</nav>
 		<div class="row">
-			<div class="col s12 m6 l4 center">
-				<canvas width="800" height="800"></canvas>
-				<div class="card blue-grey darken-1 left-align">
-					<div class="card-content white-text">
-						<span class="card-title">Console</span>
-						<ul id="console"></ul>
-					</div>
-				</div>
+			<div class="col s12 m6 l4 center iframeContainer">
+				<iframe src="iframe.html" frameborder="0" height="100%" width="100%"></iframe>
 			</div>
-
-
 
 			<!-- Première partie du tutoriel -->
 			<div id="part1" class="col s12 m6 l8">
