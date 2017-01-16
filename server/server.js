@@ -10,7 +10,7 @@ console.log("Démarrage du serveur...")
  * Socket.io permet d'établir une communication directe 
  * entre client (HTML/JS) et serveur.
  */
-io = require("socket.io").listen(8080)
+io = require("socket.io").listen(80)
 
 /**
  * La pomme est en fait représentées par 
