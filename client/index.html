@@ -65,38 +65,32 @@
 
 					Le code est partiellement réalisé, évidemment tu ne vas pas réaliser le jeu en partant de 0.
 					Le jeu a été réalisé par notre cher major de promotion entre 2 cours dans un couloir.
+					Un programme c'est un algorithme ou une suite d'instruction qui la plupart du temps se lit de haut en bas.
 
+					Dans cet atelier, il faudra réaliser un petit jeu en deux temps : la partie solo puis la partie multi-joueur. 
+					Ton but va être de construire l'algorithme qui permettra de faire fonctionner le jeu. 
+					Pour ce faire tu devras placer certains instructions à certains endroits dans un certain ordre.
+					Rien n'est compliqué il faut juste un minimum de logique.
+
+					Voici des exemples d'instruction : 
 
 					<!-- Démonstration du code -->
 					<pre><code class="hljs javascript">
-/**
-* Une classe (ou class in english) permet de représenter un objet.
-*/
-class nomClass{
-
-	/**
-	* Une methode est une fonction que l'objet est capable de réaliser
-	*/
-	methode() {
-
-	}
-
-	// Exemple de méthode:
-	direBonjour(){
-		dire("bonjour");
-	}
-}	
+// Par exemple l'instruction console.info("message")
+// permet de faire afficher un message dans la console
+console.info("bonjour")
+// Ici on va faire afficher bonjour dans la console
 					</code></pre>
 
 					<h4>Principe du jeu</h4>
 
 					Le but est d'obtenir le meilleur score pour ce faire, il faut manger les pommes avec son serpent. 
-					Il faut aussi faire attention a ne pas se faire "manger" par les autres joueurs en effet il est possible de les manger.
+					Il faut faire attention a ne pas mordre les autres joueurs sous peine de mort. Vous mangez vous-même vous fera aussi mourir.
 
 					<h4>Comment jouer ?</h4>
 
 					Il suffit de déplacer son personnage en utilisant les flèches directionnelles.
-					La partie de se termine lorsque le joueur se mange lui même et ou se fait manger.
+					La partie de se termine lorsque le joueur se mange lui même et mange quelqu'un.
 				</div>
 
 
@@ -119,9 +113,126 @@ class nomClass{
 			<!-- Partie 2 du tutoriel -->
 			<div id="part2" class="col s12 m6 l8">
 				<div class="row contenuTuto">
-					<h3>Mise en place solitaire</h3>
+					<h3>Mise en place du solo</h3>
 
-					Quand il faut y aller, il faut y aller !
+					"Quand il faut y aller, il faut y aller !"
+
+					<strong>Pour rafraichir uniquement le jeu, on utilisera le petit bouton prévu a cet effet</strong>
+
+					<h4>Les boucles</h4>
+					
+					Ici nous serons en présence de 2 boucles : une boucle "start" (Elle sera appelé une seule fois au démarrage de la partie)
+					Il faudra donc faire les initialisations de tous les objets (serpent,pomme)
+
+					<pre><code class="hljs javascript">
+start(){
+
+}
+					</code></pre>
+
+					Et la boucle "loop" : (Qui sera appelé de façon continue, quand elle se termine, elle se relance)
+					C'est ici qu'il faudra vérifier si le joueur appuie sur une touche par exemple.
+
+					<pre><code class="hljs javascript">
+loop(){
+
+}
+					</pre></code>
+
+					<h4>Les instructions</h4>
+
+					Aucun serpent n'est présent dans ton jeu. 
+					Il faut donc en faire afficher un.
+
+					Comme c'est une initialisation il ne faut exécuter l'instruction qu'une seule fois.
+					A toi de placer cette instruction au bon endroit.
+					Pour ce faire tu disposes de l'instruction :
+
+					<pre><code class="hljs javascript">
+this.initialiserNotreSerpent()
+					</pre></code>
+
+					Ton serpent est maintenant initialisé. "Mais il n'y a rien à l'écran !"
+					Nous allons maintenant le faire afficher. L'affichage des serpents est une instruction qui sera appelé plusieurs fois dans la partie(Tant que nous sommes entrain de jouer).
+					Il faut la placer dans une boucle. L'instruction est la suivante :
+
+					<pre><code class="hljs javascript">
+this.afficherSerpents()
+					</pre></code>
+
+					Wow quel magnifique serpent, n'est-ce pas ?
+					Ne serait-il pas mieux s'il bougeait ?
+					Cette instruction sera appelé tant que la partie est en cours.
+					L'instruction : 
+
+					<pre><code class="hljs javascript">
+this.faireAvancerNotreSerpent()
+					</pre></code>
+
+					Effectivement le serpent ne bouge pas. Il faut donc rappeler la boucle loop si le serpent n'est pas mort.
+					Il faut placer cette instruction à la fin de la boucle loop().
+					Voici l'instruction :
+
+					<pre><code class="hljs javascript">
+if (!this.notreSerpentEstMort()){
+	this.rappelerBoucleDeRendu() 
+}
+					</pre></code>
+
+					Ca y est ca bouge ! Pourquoi y a-t-il une "trainée " ?
+					Quelques explications : 
+					Actuellement nous faisons afficher les différents positions du serpent les unes après les autres sans effacer la position précédente.
+					Pour avoir un affichage propre nous allons utilisons l'instruction :
+
+					<pre><code class="hljs javascript">
+this.nettoyerEcran()
+					</pre></code>
+
+					Notre serpent bouge et c'est propre !
+					Faisons en sorte de pouvoir se déplacer, tu vas avoir besoin de deux instructions :
+
+					<pre><code class="hljs javascript">
+// Instruction 1
+this.ecouterLesTouchesClavier()
+
+// Instruction 2
+this.faireTournerNotreSerpent()
+					</pre></code>
+
+					La premiere va te permettre de vérifier si le joueur appuie sur une touche. Cette intruction ne sera appeler qu'une fois.
+					La deuxième va permettre de faire bouger le serpent en fonction de la dernière touche pressée. Elle sera appelé constamment.
+					
+					<div class="divider"></div>
+
+					Rajoutons un peu de contenu (une pomme à manger, un score ...)
+					Pour afficher le score l'instruction : 
+
+					<pre><code class="hljs javascript">
+// L'affichage du score est réalisé constamment
+this.afficherScore()
+					</pre></code>
+
+					Pour faire afficher une pomme : 
+
+					<pre><code class="hljs javascript">
+// La pomme ne sera créé qu'une fois (Boucle start)
+this.creerPomme()
+// L'affichage de la pomme est réalisé constamment
+this.afficherPomme()
+					</pre></code>
+
+					Niquel, on a la pomme et le score ! Il faut que l'on puisse manger la pomme et que cela fasse augmenter le score.
+					A chaque affichage on vérifie si le serpent est au même endroit que la pomme pour se faire :
+
+					<pre><code class="hljs javascript">
+if (this.notreSerpentMordPomme()){
+	this.mangerPomme()
+} 
+					</pre></code>
+
+					Après avoir mangé la pomme on peut faire afficher une autre pomme pour pouvoir continuer la partie mais nous allons nous concentrer sur la partie la plus intéréssante le multi-joueur.
+					On passe au mutli-joueur ?
+				
 				</div>
 
 
