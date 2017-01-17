@@ -37,8 +37,8 @@
 				</ul>
 
 				<ul class="tabs tabs-transparent">
-					<li class="tab"><a id="tab_part1" class="active" href="#part1">Avant propos</a></li>
-					<li class="tab"><a id="tab_part2" href="#part2">Mise en place solitaire</a></li>
+					<li class="tab"><a id="tab_part1" class="active" href="#part1">Avant-propos</a></li>
+					<li class="tab"><a id="tab_part2" href="#part2">Mise en place du solo</a></li>
 					<li class="tab"><a href="#part3">Ajout du multijoueur</a></li>
 					<li class="tab"><a href="#part4">Pour aller plus loin</a></li>
 				</ul>
@@ -52,7 +52,7 @@
 			<!-- Première partie du tutoriel -->
 			<div id="part1" class="col s12 m6 l8">
 				<div class="row contenuTuto">
-					<h4>Avant propos</h4>
+					<h4>Avant-propos</h4>
 
 					Dans cet atelier, tu vas être amené à réaliser un petit jeu. Comme tu l'as surement déjà vu, ce jeu reprendra le principe du jeu snake en ajoutant quelques fonctionnalités.
 					
@@ -65,12 +65,12 @@
 
 					Le code est partiellement réalisé, évidemment tu ne vas pas réaliser le jeu en partant de 0.
 					Le jeu a été réalisé par notre cher major de promotion entre 2 cours dans un couloir.
-					Un programme c'est un algorithme ou une suite d'instruction qui la plupart du temps se lit de haut en bas.
+					Un programme c'est un algorithme ou une suite d'instructions qui, la plupart du temps, se lit de haut en bas.
 
-					Dans cet atelier, il faudra réaliser un petit jeu en deux temps : la partie solo puis la partie multi-joueur. 
-					Ton but va être de construire l'algorithme qui permettra de faire fonctionner le jeu. 
-					Pour ce faire tu devras placer certains instructions à certains endroits dans un certain ordre.
-					Rien n'est compliqué il faut juste un minimum de logique.
+					Dans cet atelier, il faudra réaliser un petit jeu en deux temps : la partie solo puis la partie multijoueur. 
+					Ton but va être de construire l'algorithme qui permettra à ce jeu de fonctionner. 
+					Pour ce faire tu devras placer certaines instructions à certains endroits dans un certain ordre. (Et tu y arriveras certainement.)
+					Rien de très compliqué en somme, il faut juste un minimum de logique (et savoir suivre des instructions).
 
 					Voici des exemples d'instruction : 
 
@@ -84,13 +84,13 @@ console.info("bonjour")
 
 					<h4>Principe du jeu</h4>
 
-					Le but est d'obtenir le meilleur score pour ce faire, il faut manger les pommes avec son serpent. 
-					Il faut faire attention a ne pas mordre les autres joueurs sous peine de mort. Vous mangez vous-même vous fera aussi mourir.
+					Le but est d'obtenir le meilleur score. Pour ce faire, il faut manger les pommes avec son serpent. 
+					Il faut faire attention a ne pas mordre les autres joueurs sous peine de mort. Vous manger vous-même vous fera aussi mourir.
 
 					<h4>Comment jouer ?</h4>
 
 					Il suffit de déplacer son personnage en utilisant les flèches directionnelles.
-					La partie de se termine lorsque le joueur se mange lui même et mange quelqu'un.
+					La partie se termine lorsque le joueur se mange lui même ou mange un autre serpent.
 				</div>
 
 
@@ -102,7 +102,7 @@ console.info("bonjour")
 
 				<!-- Bouton pour changer de pages -->
 				<div class="row">
-					<button data-dest="part2" class="btn btnContinue waves-effect waves-light col offset-s6 s6 offset-m6 offset-l6 m4 l4">Installation solo !
+					<button data-dest="part2" class="btn btnContinue waves-effect waves-light col offset-s6 s6 offset-m6 offset-l6 m4 l4">Mise en place du solo
 						<i class="material-icons right">skip_next</i>
 					</button>
 				</div>
@@ -117,12 +117,16 @@ console.info("bonjour")
 
 					"Quand il faut y aller, il faut y aller !"
 
-					<strong>Pour rafraichir uniquement le jeu, on utilisera le petit bouton prévu a cet effet</strong>
+					<strong>Pour rafraichir le jeu, on utilisera le petit bouton prévu a cet effet en haut à droite de la fenêtre de jeu.</strong>
 
 					<h4>Les boucles</h4>
 					
-					Ici nous serons en présence de 2 boucles : une boucle "start" (Elle sera appelé une seule fois au démarrage de la partie)
-					Il faudra donc faire les initialisations de tous les objets (serpent,pomme)
+					Ici nous serons en présence de 2 boucles : <br><br>
+
+					La boucle "start" :<br>
+
+					Elle sera appelée une seule fois au démarrage de la partie.
+					Il faudra donc y réaliser les initialisations de tous les objets serpent ou pomme, bref faire tout ce qui ne doit être fait qu'une foiss en début de partie.
 
 					<pre><code class="hljs javascript">
 start(){
@@ -130,8 +134,9 @@ start(){
 }
 					</code></pre>
 
-					Et la boucle "loop" : (Qui sera appelé de façon continue, quand elle se termine, elle se relance)
-					C'est ici qu'il faudra vérifier si le joueur appuie sur une touche par exemple.
+					Et la boucle "loop" (boucle de rendu) :<br>
+					Elle sera appelée de façon continue : quand elle se termine, elle se relance.
+					On prendra soin d'y effectuer toutes les opérations que l'on doit faire à chaque rafraichissement (faire avancer le serpent par exemple). 
 
 					<pre><code class="hljs javascript">
 loop(){
@@ -142,7 +147,7 @@ loop(){
 					<h4>Les instructions</h4>
 
 					Aucun serpent n'est présent dans ton jeu. 
-					Il faut donc en faire afficher un.
+					Il faut donc en faire afficher un.<br><br>
 
 					Comme c'est une initialisation il ne faut exécuter l'instruction qu'une seule fois.
 					A toi de placer cette instruction au bon endroit.
@@ -152,9 +157,13 @@ loop(){
 this.initialiserNotreSerpent()
 					</pre></code>
 
-					Ton serpent est maintenant initialisé. "Mais il n'y a rien à l'écran !"
-					Nous allons maintenant le faire afficher. L'affichage des serpents est une instruction qui sera appelé plusieurs fois dans la partie(Tant que nous sommes entrain de jouer).
-					Il faut la placer dans une boucle. L'instruction est la suivante :
+					N'oublie pas d'enregistrer ton travail et de rafraîchir le jeu !<br><br>
+
+					Ton serpent est maintenant initialisé. 
+					<quote><i>"Mais il n'y a rien à l'écran !"</i></quote>
+					Nous allons maintenant le faire afficher. L'affichage des serpents est une instruction qui sera appelée plusieurs fois dans la partie (tant que nous sommes en train de jouer à vrai dire).
+					Il faut la placer dans une boucle. <br>
+					L'instruction est la suivante :
 
 					<pre><code class="hljs javascript">
 this.afficherSerpents()
@@ -162,15 +171,29 @@ this.afficherSerpents()
 
 					Wow quel magnifique serpent, n'est-ce pas ?
 					Ne serait-il pas mieux s'il bougeait ?
-					Cette instruction sera appelé tant que la partie est en cours.
+					Cette instruction sera appelé tant que la partie est en cours.<br>
 					L'instruction : 
 
 					<pre><code class="hljs javascript">
 this.faireAvancerNotreSerpent()
 					</pre></code>
 
-					Effectivement le serpent ne bouge pas. Il faut donc rappeler la boucle loop si le serpent n'est pas mort.
-					Il faut placer cette instruction à la fin de la boucle loop().
+					<quote><i>Ca ne fonctionne pas bien mieux votre truc, rien ne se passe chez moi !</i></quote>
+					Il n'y a pas de mystèque qui saurait nous résister ! Si le serpent n'avance pas, c'est tout simplement parce que la boucle de rendu n'est pas rappelée automatiquement. Essayez donc de placer l'instruction console.log('test') dedans. Le message ne s'affichera qu'une seul fois !<br>
+					A la fin de cette-dite boucle, il faut la rapeler.<br>
+					Attention tout de même, il y a une condition ! On ne le fait que si notre serpent n'est pas mort.<br>
+					Il faut utiliser la structure conditionnelle if :
+					<pre><code class="hljs javascript">
+// Exemple de if :
+if (18>13){
+	console.log("18 est plus grand que 13")
+}
+// On peut aussi inverser la condition avec le symbole "!" :
+if (!18<13){
+	console.log("13 n' est pas supérieur à 18)
+}
+					</pre></code>
+					Il faut alors placer cette instruction à la fin de la boucle loop().<br>
 					Voici l'instruction :
 
 					<pre><code class="hljs javascript">
@@ -179,16 +202,22 @@ if (!this.notreSerpentEstMort()){
 }
 					</pre></code>
 
-					Ca y est ca bouge ! Pourquoi y a-t-il une "trainée " ?
-					Quelques explications : 
-					Actuellement nous faisons afficher les différents positions du serpent les unes après les autres sans effacer la position précédente.
+					Ca y est ca bouge ! 
+					<quote><i>Pourquoi diable y a-t-il une trainée derrière mon serpent !?</i></quote>
+					Quelques explications : <br>
+					Actuellement nous faisons afficher les différents positions du serpent les unes après les autres sans effacer la position précédente.<br>
 					Pour avoir un affichage propre nous allons utilisons l'instruction :
 
 					<pre><code class="hljs javascript">
 this.nettoyerEcran()
 					</pre></code>
 
-					Notre serpent bouge et c'est propre !
+					Faites attention, cette instruction doit être utilisée juste avant d'afficher le serpent ! <br>
+
+					Si tout se passe bien, ton serpent bouge et c'est propre !<br>
+
+					Si tu as un problème, n'hésite pas à appeler un étudiant autour de toi, ils sont tous gentils (sauf Gloria, elle elle est méchante, mais ne lui dite pas) ! <br>
+
 					Faisons en sorte de pouvoir se déplacer, tu vas avoir besoin de deux instructions :
 
 					<pre><code class="hljs javascript">
@@ -199,10 +228,13 @@ this.ecouterLesTouchesClavier()
 this.faireTournerNotreSerpent()
 					</pre></code>
 
-					La premiere va te permettre de vérifier si le joueur appuie sur une touche. Cette intruction ne sera appeler qu'une fois.
-					La deuxième va permettre de faire bouger le serpent en fonction de la dernière touche pressée. Elle sera appelé constamment.
+					La premiere va te permettre de vérifier si le joueur appuie sur une touche. Cette intruction ne sera appeler qu'une fois puisque c'est un écouteur d'évennements. Faisons simple : quand tu appuies sur une touche de ton clavier, tu déclenches un événement. Cette instruction permet de placer un écouteur qui attendra cet événement pour faire une action. Il est donc logique de n'enregistrer cet écouteur qu'une seule fois !<br>
+					La deuxième instruction va permettre de faire bouger le serpent en fonction de la dernière touche pressée. Elle sera appelé constamment juste avant de faire avancer le serpent.
 					
-					<div class="divider"></div>
+					<!-- Séparation -->
+					<div class="row">
+						<div class="divider"></div>
+					</div>
 
 					Rajoutons un peu de contenu (une pomme à manger, un score ...)
 					Pour afficher le score l'instruction : 
@@ -221,8 +253,8 @@ this.creerPomme()
 this.afficherPomme()
 					</pre></code>
 
-					Niquel, on a la pomme et le score ! Il faut que l'on puisse manger la pomme et que cela fasse augmenter le score.
-					A chaque affichage on vérifie si le serpent est au même endroit que la pomme pour se faire :
+					Nickel, on a la pomme et le score ! Il faut que l'on puisse manger la pomme et que cela fasse augmenter le score.
+					A chaque affichage on vérifie si le serpent est au même endroit que la pomme (s'il la mord). Pour se faire :
 
 					<pre><code class="hljs javascript">
 if (this.notreSerpentMordPomme()){
@@ -230,8 +262,8 @@ if (this.notreSerpentMordPomme()){
 } 
 					</pre></code>
 
-					Après avoir mangé la pomme on peut faire afficher une autre pomme pour pouvoir continuer la partie mais nous allons nous concentrer sur la partie la plus intéréssante le multi-joueur.
-					On passe au mutli-joueur ?
+					Après avoir mangé la pomme on peut faire afficher une autre pomme pour pouvoir continuer la partie mais nous allons nous concentrer sur la partie la plus intéréssante le multijoueur.<br>
+					On est ready to go ?
 				
 				</div>
 
@@ -244,10 +276,10 @@ if (this.notreSerpentMordPomme()){
 
 				<!-- Boutons pour changer de pages -->
 				<div class="row">
-					<button data-dest="part1" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Avant propos
+					<button data-dest="part1" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Avant-propos
 						<i class="material-icons left">skip_previous</i>
 					</button>
-					<button data-dest="part3" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Le multi-joueur
+					<button data-dest="part3" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Ajout du multijoueur
 						<i class="material-icons right">skip_next</i>
 					</button>
 				</div>
@@ -260,27 +292,27 @@ if (this.notreSerpentMordPomme()){
 				<div class="row contenuTuto">
 					<h3>Ajout du multijoueur</h3>
 
-					"On se fait un peu chier tout seul, non ?"
+					<quote><i>On se fait un peu chier tout seul, non ?</i></quote>
 
 					Pour faire en sorte que chaque client ait la même pomme on va laisser le serveur gérer cette partie.
 					On va donc enlever une instruction et en rajouter une autre.
 
 					<pre><code class="hljs javascript">
-// Il faut retirer l'apparition de pomme faire localement :
+// Il faut retirer l'apparition de pomme faite localement :
 this.creerPomme()
 // Puis on ajoute l'instruction qu'il ne faudra exécuter qu'une fois 
 // (On dit a notre serpent d'écouter pour voir si le serveur lui dit qu'il y a une nouvelle pomme)
 this.ecouterMAJServeurNouvellePomme()
 					</pre></code>
 
-					Cependant, le serveur ne reçoit pas les informations. On va donc lui envoyer nos informations mais avant nous allons vérifier que nous ne sommes pas mort.
+					Cependant, le serveur ne reçoit pas les informations ! La communication se fait dans les 2 sens : on envoie des informations au serveur (un ordinateur distant) et le serveur nous envoie des informations. On va donc lui envoyer nos informations mais avant nous allons vérifier que nous ne sommes pas mort avant tout.
 					<pre><code class="hljs javascript">
 if (!this.notreSerpentEstMort()){
 	this.envoyerInformationsServeur() 
 }
 					</pre></code>
 
-					On ne peut pas mourir et ca serait un peu trop facile dans ce cas. On va donc vérifier la collision avec soit même et avec les autres serpents.
+					On ne peut pas mourir et ca serait un peu trop facile s'il en restait ainsi. On va donc vérifier la collision avec soit même et avec les autres serpents.
 					Cette instruction sera appelé tout le long de la partie.
 
 					<pre><code class="hljs">
@@ -289,13 +321,13 @@ if (this.notreSerpentEnMordUn()){
 }
 					</pre></code>
 
-					Mais je suis tout seul, ou sont les autres joueurs ?
+					<quote><i>Mais je suis tout seul, ou sont les autres joueurs ?</i></quote>
 
 					<pre><code class="hljs javascript">
 this.ecouterMAJServeurConcurrents()
 					</pre></code>
 
-					Les autres serpents me rentrent dedans mais ne meurent pas ?
+					<quote><i>Les autres serpents me rentrent dedans mais ne meurent pas ?</i></quote>
 					<pre><code class="hljs javascript">
 this.ecouterMAJServeurSupprimerSerpent()
 					</pre></code>
@@ -310,10 +342,10 @@ this.ecouterMAJServeurSupprimerSerpent()
 
 				<!-- Boutons pour changer de pages -->
 				<div class="row">
-					<button data-dest="part2" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Installation solo !
+					<button data-dest="part2" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Installation du solo
 						<i class="material-icons left">skip_previous</i>
 					</button>
-					<button data-dest="part4" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Infos supplémentaires ...
+					<button data-dest="part4" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Pour aller plus loin
 						<i class="material-icons right">skip_next</i>
 					</button>
 				</div>
@@ -326,8 +358,12 @@ this.ecouterMAJServeurSupprimerSerpent()
 				<div class="row contenuTuto">
 					<h3>Pour aller plus loin</h3>
 
-					Vous en voulez plus ?
+					Vous voulez en savoir plus ? Continuer à modifier le code chez vous ou simplement "gratter" ?
 					Le code source complet est disponible à l'adresse suivante : <a href="https://github.com/Evoliofly/JPOSnakeMulti"><strong>https://github.com/Evoliofly/JPOSnakeMulti</strong></a><br />
+
+					Vous êtes invités à démonter toute cette application afin d'en comprendre son fonctionnement intime !<br>
+
+					Si un élément vous a semblé obscur, n'hésitez pas à nous le dire, nous améliorerons ce micro TP pour la prochaine fois !<br>
 
 					Si vous voulez nous contacter : <i>louis.gaume@etu.unilim.fr</i> / <i>antoine.murat@etu.unilim.fr</i><br />
 
@@ -369,7 +405,7 @@ this.ecouterMAJServeurSupprimerSerpent()
 
 				<!-- Bouton pour changer de pages -->
 				<div class="row">
-					<button data-dest="part3" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Le multi-joueur
+					<button data-dest="part3" class="btn btnContinue waves-effect waves-light col s6 offset-m1 offset-l1 m4 l4">Ajout du multijoueur
 						<i class="material-icons left">skip_previous</i>
 					</button>
 				</div>
