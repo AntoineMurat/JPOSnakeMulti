@@ -9,7 +9,7 @@ class GameJPOACompleter {
 	start() {
 		// TODO
 		// 
-		// Ecouter les touches du clavier.
+		//  Ecouter les touches du clavier.
 
 		this.ecouterLesTouchesClavier()
 
@@ -69,7 +69,7 @@ class GameJPOACompleter {
 
 		// TODO
 		// 
-		// Vérifier si notre serpent en mord un.
+		//  Vérifier si notre serpent en mord un.
 		// Si c'est le cas, on affiche l'écran de fin.
 		
 		if (this.notreSerpentEnMordUn()){
@@ -93,6 +93,7 @@ class GameJPOACompleter {
 		// 
 		// Nettoyer l'écran.
 
+		
 		this.nettoyerEcran()
 
 		// TODO

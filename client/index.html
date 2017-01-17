@@ -273,7 +273,7 @@ this.creerPomme()
 this.ecouterMAJServeurNouvellePomme()
 					</pre></code>
 
-					Cependant, le serveur ne reçoit pas les informations. On va donc lui envoyer mais avant nous allons vérifier
+					Cependant, le serveur ne reçoit pas les informations. On va donc lui envoyer nos informations mais avant nous allons vérifier que nous ne sommes pas mort.
 					<pre><code class="hljs javascript">
 if (!this.notreSerpentEstMort()){
 	this.envoyerInformationsServeur() 
@@ -327,7 +327,37 @@ this.ecouterMAJServeurSupprimerSerpent()
 					<h3>Pour aller plus loin</h3>
 
 					Vous en voulez plus ?
-					Le projet est disponible à l'adresse suivante...
+					Le code source complet est disponible à l'adresse suivante : <a href="https://github.com/Evoliofly/JPOSnakeMulti"><strong>https://github.com/Evoliofly/JPOSnakeMulti</strong></a><br />
+
+					Si vous voulez nous contacter : <i>louis.gaume@etu.unilim.fr</i> / <i>antoine.murat@etu.unilim.fr</i><br />
+
+					<div class="row">
+						<div class="col s12 m4 offset-m4">
+							<form action="https://formspree.io/zeklouis@gmail.com" method="POST">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="last_name" type="text" class="validate" name="prenom">
+										<label for="last_name">Prénom</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="last_name" type="text" class="validate" name="mail">
+										<label for="last_name">Mail</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<textarea id="textarea1" class="materialize-textarea" name="comment"></textarea>
+										<label for="textarea1">Commentaires</label>
+									</div>
+								</div>
+								<button class="btn waves-effect waves-light col s12 btnContinue" type="submit">Envoyer
+									<i class="material-icons right">send</i>
+								</button>
+							</form>
+						
+					</div>
 				</div>
 
 
