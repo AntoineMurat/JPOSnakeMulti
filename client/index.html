@@ -260,7 +260,45 @@ if (this.notreSerpentMordPomme()){
 				<div class="row contenuTuto">
 					<h3>Ajout du multijoueur</h3>
 
-					On se fait un peu chier tout seul, non ?
+					"On se fait un peu chier tout seul, non ?"
+
+					Pour faire en sorte que chaque client ait la même pomme on va laisser le serveur gérer cette partie.
+					On va donc enlever une instruction et en rajouter une autre.
+
+					<pre><code class="hljs javascript">
+// Il faut retirer l'apparition de pomme faire localement :
+this.creerPomme()
+// Puis on ajoute l'instruction qu'il ne faudra exécuter qu'une fois 
+// (On dit a notre serpent d'écouter pour voir si le serveur lui dit qu'il y a une nouvelle pomme)
+this.ecouterMAJServeurNouvellePomme()
+					</pre></code>
+
+					Cependant, le serveur ne reçoit pas les informations. On va donc lui envoyer mais avant nous allons vérifier
+					<pre><code class="hljs javascript">
+if (!this.notreSerpentEstMort()){
+	this.envoyerInformationsServeur() 
+}
+					</pre></code>
+
+					On ne peut pas mourir et ca serait un peu trop facile dans ce cas. On va donc vérifier la collision avec soit même et avec les autres serpents.
+					Cette instruction sera appelé tout le long de la partie.
+
+					<pre><code class="hljs">
+if (this.notreSerpentEnMordUn()){
+	this.afficherEcranScore()
+}
+					</pre></code>
+
+					Mais je suis tout seul, ou sont les autres joueurs ?
+
+					<pre><code class="hljs javascript">
+this.ecouterMAJServeurConcurrents()
+					</pre></code>
+
+					Les autres serpents me rentrent dedans mais ne meurent pas ?
+					<pre><code class="hljs javascript">
+this.ecouterMAJServeurSupprimerSerpent()
+					</pre></code>
 				</div>
 
 

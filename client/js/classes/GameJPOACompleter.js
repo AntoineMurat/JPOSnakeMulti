@@ -17,26 +17,25 @@ class GameJPOACompleter {
 		// 
 		// Ecouter le serveur pour les MAJ des serpents.
 		
-		//this.ecouterMAJServeurConcurrents()
+		this.ecouterMAJServeurConcurrents()
 
 		// TODO
 		// 
 		// Ecouter le serveur pour enlever les serpents.
 
-		//this.ecouterMAJServeurSupprimerSerpent()
+		this.ecouterMAJServeurSupprimerSerpent()
 
 		// TODO
 		// 
 		// Ecouter le serveur pour placer les pommes.
 
-		//this.ecouterMAJServeurNouvellePomme()
+		this.ecouterMAJServeurNouvellePomme()
 
 		// TODO
 		// 
 		// Initialiser notre serpent.
 	
 		this.initialiserNotreSerpent()
-		this.creerPomme()
 		
 		console.info("Partie démarrée.")
 
@@ -73,9 +72,9 @@ class GameJPOACompleter {
 		// Vérifier si notre serpent en mord un.
 		// Si c'est le cas, on affiche l'écran de fin.
 		
-		//if (this.notreSerpentEnMordUn()){
-		//	this.afficherEcranScore()
-		//}
+		if (this.notreSerpentEnMordUn()){
+			this.afficherEcranScore()
+		}
 
 		// TODO
 		// 
@@ -123,9 +122,9 @@ class GameJPOACompleter {
 		// Si ce n'est pas le cas, on informe le serveur de notre
 		// positions, de notre nombre de blocs, etc...
 
-		//if (!this.notreSerpentEstMort()){
-		//	this.envoyerInformationsServeur() 
-		//}
+		if (!this.notreSerpentEstMort()){
+			this.envoyerInformationsServeur() 
+		}
 
 		// TODO
 		// 
