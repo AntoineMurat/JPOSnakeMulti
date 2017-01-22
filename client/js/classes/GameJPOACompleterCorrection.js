@@ -7,14 +7,35 @@ class GameJPOACompleter {
 	 * Démarre la partie en initialisant divers objets et enregistrant divers listeners.
 	 */
 	start() {
+		// TODO
+		// 
+		//  Ecouter les touches du clavier.
 
-		// CODES ICI :
-		// --------------------------------------------------------------
+		this.ecouterLesTouchesClavier()
 
+		// TODO
+		// 
+		// Ecouter le serveur pour les MAJ des serpents.
+		
+		this.ecouterMAJServeurConcurrents()
 
+		// TODO
+		// 
+		// Ecouter le serveur pour enlever les serpents.
 
+		this.ecouterMAJServeurSupprimerSerpent()
 
-		// --------------------------------------------------------------
+		// TODO
+		// 
+		// Ecouter le serveur pour placer les pommes.
+
+		this.ecouterMAJServeurNouvellePomme()
+
+		// TODO
+		// 
+		// Initialiser notre serpent.
+	
+		this.initialiserNotreSerpent()
 		
 		console.info("Partie démarrée.")
 
@@ -30,14 +51,91 @@ class GameJPOACompleter {
 	 */
 	loop() {
 
-		// CODES ICI :
-		// --------------------------------------------------------------
+		/**
+		 * MAJ de la physique et de la logique du jeu.
+		 */
 
+		// TODO
+		// 
+		// Faire tourner notre serpent.
+		
+		this.faireTournerNotreSerpent()
 
+		// TODO
+		// 
+		// Faire avancer notre serpent.
+		
+		this.faireAvancerNotreSerpent()
 
+		// TODO
+		// 
+		//  Vérifier si notre serpent en mord un.
+		// Si c'est le cas, on affiche l'écran de fin.
+		
+		if (this.notreSerpentEnMordUn()){
+			this.afficherEcranScore()
+		}
 
-		// --------------------------------------------------------------
-	
+		// TODO
+		// 
+		// Vérifier si notre serpent mord la pomme.
+		// Si c'est le cas, il la mange.
+
+		if (this.notreSerpentMordPomme()){
+			this.mangerPomme()
+		} 
+
+		/**
+		 * MAJ des graphismes.
+		 */
+		
+		// TODO
+		// 
+		// Nettoyer l'écran.
+
+		
+		this.nettoyerEcran()
+
+		// TODO
+		// 
+		// Afficher serpents.
+
+		this.afficherSerpents()
+
+		// TODO
+		// 
+		// Afficher la pomme.
+		this.afficherPomme()
+
+		// TODO
+		// 
+		// Afficher le score.
+
+		this.afficherScore()
+
+		/**
+		 * Gestion du multijoueur.
+		 */
+		
+		// TODO
+		// 
+		// Vérifier si on est mort.
+		// Si ce n'est pas le cas, on informe le serveur de notre
+		// positions, de notre nombre de blocs, etc...
+
+		if (!this.notreSerpentEstMort()){
+			this.envoyerInformationsServeur() 
+		}
+
+		// TODO
+		// 
+		// Vérifier si on est mort.
+		// Si ce n'est pas le cas, rappeler la boucle de rendu.
+
+		if (!this.notreSerpentEstMort()){
+			this.rappelerBoucleDeRendu() 
+		}
+
 	}
 
 	/**
