@@ -1,7 +1,7 @@
 /**
  * Classe représentant une partie.
  */
-class GameJPOACompleter {
+class GameJPOACompleterCorrection {
 
 	/**
 	 * Démarre la partie en initialisant divers objets et enregistrant divers listeners.

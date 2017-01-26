@@ -22,7 +22,7 @@ class GameJPOACompleter {
 		// Apres avoir chargé la partie on lance la boucle infinie.
 		this.demarrerBoucleDeRendu()
 	}
-
+	
 	/**
 	 * Lance la boucle de calcul et de rendu jusqu'à la mort.
 	 *
