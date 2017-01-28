@@ -50,7 +50,7 @@
 			</div>
 
 			<!-- Première partie du tutoriel -->
-			<div style="height:100%;" id="part1" class="col s12 m6 l8">
+			<div id="part1" class="col s12 m6 l8">
 				<div class="row contenuTuto">
 					<h4>Avant-propos</h4>
 
@@ -72,9 +72,9 @@
 					Pour ce faire tu devras placer certaines instructions à certains endroits dans un certain ordre. (Et tu y arriveras certainement.)
 					Rien de très compliqué en somme, il faut juste un minimum de logique (et savoir suivre des instructions).
 					<br />
-					<strong>Penses à enregistrer ton fichier chaque fois que tu effectues une modification ! </strong>
+					<strong>Pense à enregistrer ton fichier chaque fois que tu effectues une modification ! </strong>
 					<br />
-					Voici des exemples d'instruction : 
+					Voici des exemples d'instructions : 
 
 					<!-- Démonstration du code -->
 					<pre><code class="hljs javascript">
@@ -87,7 +87,7 @@ console.info("bonjour")
 					<h4>Principe du jeu</h4>
 
 					Le but est d'obtenir le meilleur score. Pour ce faire, il faut manger les pommes avec son serpent. 
-					Il faut faire attention a ne pas mordre les autres joueurs sous peine de mort. Vous manger vous-même vous fera aussi mourir.
+					Il faut faire attention à ne pas mordre les autres joueurs sous peine de mort. Vous manger vous-même vous fera aussi mourir.
 
 					<h4>Comment jouer ?</h4>
 
@@ -113,7 +113,7 @@ console.info("bonjour")
 
 
 			<!-- Partie 2 du tutoriel -->
-			<div id="part2" style="height: 100%;" class="col s12 m6 l8">
+			<div id="part2" class="col s12 m6 l8">
 				<div class="row contenuTuto">
 					<h3>Mise en place du solo</h3>
 
@@ -173,16 +173,16 @@ this.afficherSerpents()
 
 					Wow quel magnifique serpent, n'est-ce pas ?
 					Ne serait-il pas mieux s'il bougeait ?
-					Cette instruction sera appelé tant que la partie est en cours.<br>
+					Cette instruction sera appelée tant que la partie est en cours.<br>
 					L'instruction : 
 
 					<pre><code class="hljs javascript">
 this.faireAvancerNotreSerpent()
 					</pre></code>
 
-					<quote><i>Ca ne fonctionne pas bien mieux votre truc, rien ne se passe chez moi !</i></quote>
-					Il n'y a pas de mystèque qui saurait nous résister ! Si le serpent n'avance pas, c'est tout simplement parce que la boucle de rendu n'est pas rappelée automatiquement. Essayez donc de placer l'instruction console.log('test') dedans. Le message ne s'affichera qu'une seul fois !<br>
-					A la fin de cette-dite boucle, il faut la rapeler.<br>
+					<quote><i>Ca ne fonctionne pas bien votre truc, rien ne se passe chez moi !</i></quote>
+					Il n'y a pas de mystère qui saurait nous résister ! Si le serpent n'avance pas, c'est tout simplement parce que la boucle de rendu n'est pas rappelée automatiquement. Essayez donc de placer l'instruction console.log('test') dedans. Le message ne s'affichera qu'une seul fois !<br>
+					A la fin de cette-dite boucle, il faut la rappeler.<br>
 					Attention tout de même, il y a une condition ! On ne le fait que si notre serpent n'est pas mort.<br>
 					Il faut utiliser la structure conditionnelle if :
 					<pre><code class="hljs javascript">
@@ -204,11 +204,11 @@ if (!this.notreSerpentEstMort()){
 }
 					</pre></code>
 
-					Ca y est ca bouge ! 
+					Ca y est ça bouge ! 
 					<quote><i>Pourquoi diable y a-t-il une trainée derrière mon serpent !?</i></quote>
 					Quelques explications : <br>
-					Actuellement nous faisons afficher les différents positions du serpent les unes après les autres sans effacer la position précédente.<br>
-					Pour avoir un affichage propre nous allons utilisons l'instruction :
+					Actuellement nous faisons afficher les différentes positions du serpent les unes après les autres sans effacer la position précédente.<br>
+					Pour avoir un affichage propre nous allons utiliser l'instruction :
 
 					<pre><code class="hljs javascript">
 this.nettoyerEcran()
@@ -230,8 +230,8 @@ this.ecouterLesTouchesClavier()
 this.faireTournerNotreSerpent()
 					</pre></code>
 
-					La premiere va te permettre de vérifier si le joueur appuie sur une touche. Cette intruction ne sera appeler qu'une fois puisque c'est un écouteur d'évennements. Faisons simple : quand tu appuies sur une touche de ton clavier, tu déclenches un événement. Cette instruction permet de placer un écouteur qui attendra cet événement pour faire une action. Il est donc logique de n'enregistrer cet écouteur qu'une seule fois !<br>
-					La deuxième instruction va permettre de faire bouger le serpent en fonction de la dernière touche pressée. Elle sera appelé constamment juste avant de faire avancer le serpent.
+					La premiere va te permettre de vérifier si le joueur appuie sur une touche. Cette intruction ne sera appelée qu'une fois puisque c'est un écouteur d'évènements. Faisons simple : quand tu appuies sur une touche de ton clavier, tu déclenches un événement. Cette instruction permet de placer un écouteur qui attendra cet événement pour faire une action. Il est donc logique de n'enregistrer cet écouteur qu'une seule fois !<br>
+					La deuxième instruction va permettre de faire bouger le serpent en fonction de la dernière touche pressée. Elle sera appelée constamment juste avant de faire avancer le serpent.
 					
 					<!-- Séparation -->
 					<div class="row">
@@ -249,14 +249,14 @@ this.afficherScore()
 					Pour faire afficher une pomme : 
 
 					<pre><code class="hljs javascript">
-// La pomme ne sera créé qu'une fois (Boucle start)
+// La pomme ne sera créée qu'une fois (Boucle start)
 this.creerPomme()
 // L'affichage de la pomme est réalisé constamment
 this.afficherPomme()
 					</pre></code>
 
 					Nickel, on a la pomme et le score ! Il faut que l'on puisse manger la pomme et que cela fasse augmenter le score.
-					A chaque affichage on vérifie si le serpent est au même endroit que la pomme (s'il la mord). Pour se faire :
+					A chaque affichage on vérifie si le serpent est au même endroit que la pomme (s'il la mord). Pour ce faire :
 
 					<pre><code class="hljs javascript">
 if (this.notreSerpentMordPomme()){
@@ -264,7 +264,7 @@ if (this.notreSerpentMordPomme()){
 } 
 					</pre></code>
 
-					Après avoir mangé la pomme on peut faire afficher une autre pomme pour pouvoir continuer la partie mais nous allons nous concentrer sur la partie la plus intéréssante le multijoueur.<br>
+					Après avoir mangé la pomme on peut faire afficher une autre pomme pour pouvoir continuer la partie mais nous allons nous concentrer sur la partie la plus intéressante, le multijoueur.<br>
 					On est ready to go ?
 				
 				</div>
@@ -290,7 +290,7 @@ if (this.notreSerpentMordPomme()){
 
 
 			<!-- Partie 3 du tutoriel -->
-			<div id="part3" style="height: 100%;" class="col s12 m6 l8">
+			<div id="part3" class="col s12 m6 l8">
 				<div class="row contenuTuto">
 					<h3>Ajout du multijoueur</h3>
 
@@ -303,7 +303,7 @@ if (this.notreSerpentMordPomme()){
 // Il faut retirer l'apparition de pomme faite localement :
 this.creerPomme()
 // Puis on ajoute l'instruction qu'il ne faudra exécuter qu'une fois 
-// (On dit a notre serpent d'écouter pour voir si le serveur lui dit qu'il y a une nouvelle pomme)
+// (On dit à notre serpent d'écouter pour voir si le serveur lui dit qu'il y a une nouvelle pomme)
 this.ecouterMAJServeurNouvellePomme()
 					</pre></code>
 
@@ -314,8 +314,8 @@ if (!this.notreSerpentEstMort()){
 }
 					</pre></code>
 
-					On ne peut pas mourir et ca serait un peu trop facile s'il en restait ainsi. On va donc vérifier la collision avec soit même et avec les autres serpents.
-					Cette instruction sera appelé tout le long de la partie.
+					On ne peut pas mourir et ça serait un peu trop facile s'il en restait ainsi. On va donc vérifier la collision avec soit même et avec les autres serpents.
+					Cette instruction sera appelée tout au long de la partie.
 
 					<pre><code class="hljs">
 if (this.notreSerpentEnMordUn()){
@@ -323,7 +323,7 @@ if (this.notreSerpentEnMordUn()){
 }
 					</pre></code>
 
-					<quote><i>Mais je suis tout seul, ou sont les autres joueurs ?</i></quote>
+					<quote><i>Mais je suis tout seul, où sont les autres joueurs ?</i></quote>
 
 					<pre><code class="hljs javascript">
 this.ecouterMAJServeurConcurrents()
@@ -356,21 +356,21 @@ this.ecouterMAJServeurSupprimerSerpent()
 
 
 			<!-- Partie 4 du tutoriel -->
-			<div id="part4" style="height: 100%;" class="col s12 m6 l8">
+			<div id="part4" class="col s12 m6 l8">
 				<div class="row contenuTuto">
 					<h3>Pour aller plus loin</h3>
 
-					Vous voulez en savoir plus ? Continuer à modifier le code chez vous ou simplement "gratter" ?
+					Vous voulez en savoir plus ? Continuez à modifier le code chez vous ou simplement "gratter" ?
 					Le code source complet est disponible à l'adresse suivante : <a href="https://github.com/Evoliofly/JPOSnakeMulti"><strong>https://github.com/Evoliofly/JPOSnakeMulti</strong></a><br />
 
 					Vous êtes invités à démonter toute cette application afin d'en comprendre son fonctionnement intime !<br>
 
 					Si un élément vous a semblé obscur, n'hésitez pas à nous le dire, nous améliorerons ce micro TP pour la prochaine fois !<br>
 
-					Si vous voulez nous contacter : <i>louis.gaume@etu.unilim.fr</i> / <i>antoine.murat@etu.unilim.fr</i><br />
+					Si vous voulez nous contacter : <i>louis.gaume@etu.unilim.fr</i> / <i>antoine.murat@etu.unilim.fr</i> / <i>benjamin.schmitt@etu.unilim.fr</i><br />
 
 
-					Ca serait super sympa de prendre 1 min pour nous donner ton avis ! :)
+					Ce serait super sympa de prendre 1 min pour nous donner ton avis ! :)
 					<div class="row">
 						<div class="col s12 m4 offset-m4">
 							<form action="https://formspree.io/zeklouis@gmail.com" method="POST">
