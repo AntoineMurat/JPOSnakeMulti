@@ -307,7 +307,7 @@ this.creerPomme()
 this.ecouterMAJServeurNouvellePomme()
 					</pre></code>
 
-					Cependant, le serveur ne reçoit pas les informations ! La communication se fait dans les 2 sens : on envoie des informations au serveur (un ordinateur distant) et le serveur nous envoie des informations. On va donc lui envoyer nos informations mais avant nous allons vérifier que nous ne sommes pas mort avant tout.
+					Cependant, le serveur ne reçoit pas les informations ! La communication se fait dans les 2 sens : on envoie des informations au serveur (un ordinateur distant) et le serveur nous envoie des informations. On va donc lui envoyer nos informations mais avant tout, nous allons vérifier que nous ne sommes pas mort.
 					<pre><code class="hljs javascript">
 if (!this.notreSerpentEstMort()){
 	this.envoyerInformationsServeur() 
